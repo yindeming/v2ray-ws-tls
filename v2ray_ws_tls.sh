@@ -35,12 +35,13 @@ function yellow(){
 install_nginx(){
     systemctl stop firewalld
     systemctl disable firewalld
-    yum install -y libtool perl-core zlib-devel gcc wget pcre* unzip
+    yum install -y libtool perl-core zlib-devel gcc wget pcre* unzip socat
     wget https://www.openssl.org/source/openssl-1.1.1a.tar.gz
     tar xzvf openssl-1.1.1a.tar.gz
     
     mkdir /etc/nginx
     mkdir /etc/nginx/ssl
+    mkdir /etc/nginx/conf
     mkdir /etc/nginx/conf.d
     wget https://nginx.org/download/nginx-1.15.8.tar.gz
     tar xf nginx-1.15.8.tar.gz && rm nginx-1.15.8.tar.gz
